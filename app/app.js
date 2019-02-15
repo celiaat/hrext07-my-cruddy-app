@@ -1,48 +1,41 @@
-/*
-Init app
-interact with DOM
-interact with localstorage
-
- */
-
 $(document).ready(function(){
-  // this is where we jquery
-  //var keyData = 'ourKey'; // going to need to make this dynamic?
+	var $resultPETE = $("#recycle-1") 
+	var $resultHDPE = $("#recycle-2")
 
+	$(".btn-click").click(function(event){
+		event.preventDefault();
+		$(".search-container").hide();
+	});
+	
+	var $recyclePETElist = ['bottle', 'bottles', 'plastic bottle', 'plastic bottles', 'water', 'water bottle', 'water bottles', 'soda','soda bottle', 'soda bottles', 'soft drink', 'soft drinks', 'soft drink bottle', 'soft drink bottles', 'container', 'containers', 'food container', 'food containers', 'package', 'packaging', 'food packaging'];
+	
+	var $recycleHDPElist = ['milk', 'milk jug', 'milk jugs', 'jug', 'jugs', 'household cleaner', 'clearn', 'container', 'containers', 'ceral box', 'liners', 'yogurt', 'yogurt container', 'yougurt containers'];
+	
 
-  $('.btn-add').on('click', function(e){
-    console.log(e);
-    var keyData = $('.input-key').val();
-    var valueData = $('.input-value').val();
-    // write to db
-    localStorage.setItem(keyData, valueData);
-    // read from db
-    var displayText = keyData + ' | ' + localStorage.getItem(keyData);
-    // this only displays the last one? might want to switch to html
-    // and append a div
-    // <div class="display-data-item" data-keyValue="keyData">valueData</div>
-    // if you use backticks ` you can use ${templateLiterals}
-    // TODO make this vars make sense across the app
-    $('.container-data').html('<div class="display-data-item" data-keyValue="'+ keyData +'">'+valueData+'</div>');
-    $('.input-key').val('');
-    $('.input-value').val('');
-  });
+	// if user input value matches keyword, show div that's hidden
+	$(".btn-click").click(function() {
+		var $value = $(".searchTerm").val();
 
+		for (var i = 0; i < $recyclePETElist.length; i++) {
+			if ($value === $recyclePETElist[i]) {
+				$resultPETE.show();
+			}
+		}
+		for (var j = 0; j < $recycleHDPElist.length; j++) {
+			if ($value === $recycleHDPElist[j]) {
+				$resultHDPE.show();
+			}
+		}
+		
+	});
 
-  // update db
-    // need to expand when  more than 1 item is added
-
-  // delete item
-  $('.container-data').on('click', '.display-data-item', function(e){
-    console.log(e.currentTarget.dataset.keyvalue);
-    var keyData = e.currentTarget.dataset.keyvalue;
-    localStorage.removeItem(keyData);
-    $('.container-data').text('');
-  });
-  // delete all?
-  $('.btn-clear').click(function(){
-    localStorage.clear();
-    $('.container-data').text('');
-  });
-
+	
+	$(".create-a-list").click(function(event){
+		event.preventDefault();
+		
+		$(".search-container").hide();
+		$(".result-container").hide(); 
+		$(".recycle-list-container").show(); 
+	});		
+	
 });
