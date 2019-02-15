@@ -2,40 +2,177 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>HREXT07 R00lz!</title>
+  <title>Recycle 411</title>
   <script
           src="https://code.jquery.com/jquery-3.3.1.js"
           integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-          crossorigin="anonymous"></script>
+          crossorigin="anonymous">
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
   <script src="app/app.js"></script>
+  <script src="app/list.js"></script>
+
   <link rel="stylesheet" href="css/style.css">
-
-
-  <!--
-
-√ create container
-√ create button
-√ input field
-√ container to display text
-√ update button(or maybe click on the container item)
-√ delete button
-container for the response-feedback (start with alert)
--->
 </head>
-<body>
 
-<div class="container-main">
-  <header>My Cruddy App</header>
-  <div class="container-form">
-    <input type="text" class="input-key" placeholder="enter key">
-    <input type="text" class="input-value" placeholder="enter value">
-    <button class="btn-add">Submit</button>
-    <button class="btn-update">Update</button>
-    <button class="btn-delete">Delete</button>
-    <button class="btn-clear">Clear</button>
+	
+<body>
+  <header>
+	<nav>
+	  <ul>
+		<li><a href="index.html" class="home">HOME</a></li>
+		<li><a href="index.html" class="create-a-list">CREATE A LIST</a></li>
+		<li><a target="_blank" href="https://search.earth911.com/">FIND A RECYCLE CENTER</a></li>		
+	  </ul>
+	  </nav>
+ </header>
+
+
+<!-- search container on homepage. This will be hidden after user clicks button. -->
+<div class="search-container">
+  <h1>Recycle 411</h1>
+   <div class="search">
+      <input type="text" class="searchTerm" placeholder="What are you looking for?">
+      <button type="submit" class="btn-click">Find</button>
+   </div>
+</div>
+
+
+<div class="recycle-list-container" style="display: none">
+		  <div id="recycleList">
+			  <h2>Recycle List</h2>
+			  <input id="userInput" type="text" placeholder="Add items to recycle">
+			  <ul id="todolist"></ul>
+			  <div class="btns">
+				  <button class="btn-add">Add</button>
+				  <button class="btn-delete">Delete All</button>
+			  </div>
+		   </div>
+	</div>
+	  
+	
+	
+<div class="result-container">
+  <!-- recycle 1 -->
+  <div id="recycle-1" style="display:none">
+  <div class="row-1">
+	  <div class="column-left">
+		  <img src="pete.png" alt="recycle-1-pete" style="width: 300px">
+	  </div>
+	  <div class="column-right">
+		  <p><b>What is PETE (Polyethylene Terephthalate?</b>
+			  <br>PETE is a clear, strong, and lightweight plastic that is widely used for packaging foods & beverages.</p>
+	  </div>
+	</div>
+	  
+  <div class="row-2">
+	  <div class="column-right">
+		  <b>Common goods made with PETE material:</b><br>
+		  <ul>
+			  <li>Water bottles</li>
+			  <li>Soft drink bottles</li>
+			  <li>Juice containers</li>
+			  <li>Food packaging</li>
+			  <li>Cooking oil</li>
+		  </ul>
+	  </div>
+	</div>
+	
+  <div class="row-3">
+	  <div class="column-right">
+		  <b>What can it be recycled to?</b><br>
+		  <ul>
+			  <li>Bottles and polyster fibers</li>
+			  <li>Tote bags</li>
+			  <li>Fleece garments</li>
+			  <li>Life jackets</li>
+			  <li>Carpets</li>
+			  <li>Pillow stuffing</li>
+		  </ul>
+	  </div>
+	</div>
+	
+  <div class="row-4">
+	  <div class="column-right">
+		  <p><b>Health & Environmental Risks:</b><br>
+		  PETE should not be reused. It is intended for single use application. Repeated use will increase risk of bacterial growth.</p>
+	  </div>
+	</div>
+
+  <div class="row-5">
+	  <div class="column-right">
+		  <b>Difficulty level to recycle:</b><br><li>Easy</li>
+	  </div>
+	</div>
+	  
+  <div class="row-6">
+	  <div class="column-right">
+		  <b>How to recycle:</b><br><li>Curbside recycling.</li>
+	  </div>
+	</div>
   </div>
-  <div class="container-data"></div>
+	
+  
+	
+
+
+  <!-- recycle 2 -->
+  <div id="recycle-2" style="display:none">
+  <div class="row-1">
+	  <div class="column-left">
+		  <img src="hdpe.png" alt="recycle-2-hdpe" style="width: 300px">
+	  </div>
+	  <div class="column-right">
+		  <p><b>What is HDPE (High-Density Polyethylene?</b>
+			  <br>HDPE is a stiff plasic used to make milk jugs, detergent, </p>
+	  </div>
+	</div>
+	  
+  <div class="row-2">
+	  <div class="column-right">
+		  <b>Common goods made with PETE material:</b><br>
+		  <ul>
+			  <li>Milk jugs</li>
+			  <li>Household cleaner containers</li>
+			  <li>Cereal box liners</li>
+			  <li>Yogurt containers</li>
+		  </ul>
+	  </div>
+	</div>
+	
+  <div class="row-3">
+	  <div class="column-right">
+		  <b>What can it be recycled to?</b><br>
+		  <ul>
+			  <li>Bottles and bags</li>
+			  <li>Pens</li>
+			  <li>Lumber</li>
+			  <li>Detergent bottles</li>
+			  <li>Playground equipment</li>
+		  </ul>
+	  </div>
+	</div>
+	
+  <div class="row-4">
+	  <div class="column-right">
+		  <p><b>Health & Environmental Risks:</b><br>
+		  One of the three plastics considered safe due to a lower risk of leaching. Can be reused. </p>
+	  </div>
+	</div>
+
+  <div class="row-5">
+	  <div class="column-right">
+		  <b>Difficulty level to recycle:</b><br><li>Easy</li>
+	  </div>
+	</div>
+	  
+  <div class="row-6">
+	  <div class="column-right">
+		  <b>How to recycle:</b><br><li>Curbside recycling.</li>
+	  </div>
+	</div>
+  </div>
+	
 </div>
 
 </body>
