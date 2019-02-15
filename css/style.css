@@ -1,0 +1,152 @@
+body {
+	background: linear-gradient(
+      rgba(29, 140, 81, 0.5), 
+      rgba(29, 140, 81, 0.5)), url("https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?cs=srgb&dl=bright-bulb-close-up-1108572.jpg&fm=jpg") no-repeat center center fixed;
+	background-size: 120%;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	background-color: #457e62;
+
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px 20px;
+  overflow: hidden;
+  background-color: rgba(255,255,255,0.24);
+}
+
+nav li {
+  float: left;
+  text-align: center; 
+}
+
+nav li a {
+  display: block;
+  position: relative;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  padding: 4px 86px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  color: black;
+}
+
+.search-container{
+  width: 25%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 22px;
+}
+
+/*input*/
+.searchTerm {
+  float: left;
+  width: 100%;
+  border: 3px solid #209f4a;
+  padding: 17px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
+  font-size: 14px;
+}
+
+.searchTerm:focus{
+  color: #000;
+}
+
+.btn-click {
+  position: fixed;  
+  right: -50px;
+  width: 80px;
+  height: 56px;
+  border: 1px solid #209f4a;
+  background: #209f4a;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.result-container {
+  margin: 50px;
+  color: black;
+  font-size: 24px;
+}
+
+.column-left {
+  float: left;
+  width: auto;
+  padding: 40px;
+  margin: 20px;
+  background-color: rgba(255,255,255,0.74);
+  border-radius: 25px;
+
+}
+
+.column-right {
+  float: right;
+  width: 70%;
+  padding: 40px;
+  margin: 20px;
+  background-color: rgba(255,255,255,0.74);
+  border-radius: 25px;
+
+}
+
+.recycle-list-container {
+  background-color: rgba(254,254,254,0.85);
+  max-width: 600px;
+  width: 100%;
+  display: table;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px;
+  border: 1px solid #cfcbcc;
+  color: black;
+  text-align: center;
+}
+
+#userInput {
+  border: none;
+  display: table;
+  width: 98.4%;
+  line-height: 1.5;
+  padding: 16px;
+  padding: 15px;
+  border-bottom: 1px solid #cfcbcc;
+  outline: 0;
+  width: 81%;
+  margin-left: 39px;
+  font-size: 13px;
+}
+
+#todolist li {
+  list-style: none;
+  color: black;
+  border: 1px solid #cfcbcc;
+  display: table;
+  text-align: left;
+  margin-width: 100px;
+  width: 86.2%;
+  padding: 15px;
+   
+
+}
+
+.check {
+	float: left;
+	display: flex;
+	margin-top: 5px;
+	margin-right: 10px;
+}
